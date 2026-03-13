@@ -44,7 +44,13 @@ class Gomoku(Jogo):
         - Deve validar se a posição está dentro do tabuleiro e está livre.
         :param jogador: número do jogador (0 ou 1).
         """
-        raise NotImplementedError("Implementar este método")
+        if jogador == 1:
+            jogador= f"X"
+        elif jogador == 0:
+            jogador= f"O"
+        else:
+            return None
+
 
     def joga_computador(self, jogador: int) -> None:
         """
@@ -69,5 +75,8 @@ class Gomoku(Jogo):
         """
         raise NotImplementedError("Implementar este método")
 
-game= Gomoku()
-print(game.mostra_tabuleiro())
+game = Gomoku()
+game.inicializa_tabuleiro()
+game.mostra_tabuleiro()
+game.joga_humano(0)
+game.mostra_tabuleiro()
