@@ -88,6 +88,9 @@ class Gomoku(Jogo):
         - Jogador 0 usa 'O', Jogador 1 usa 'X'.
         :param jogador: número do jogador (computador).
         """
+        #Player symbol
+        p_symbol=self.player_symbol(jogador)
+        
         raise NotImplementedError("Implementar este método")
 
     def ha_jogadas_possiveis(self) -> bool:
