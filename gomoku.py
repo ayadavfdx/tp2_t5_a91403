@@ -23,8 +23,19 @@ class Gomoku(Jogo):
         Desenha o tabuleiro na consola.
         Dica: Pode usar enumerate() para numerar as linhas.
         """
-        raise NotImplementedError("Implementar este método")
+        #Header
+        print("  0 1 2 3 4 5 6 7 8 9")
 
+        for i,row in enumerate(self.tabuleiro):
+            print(i,end=" ")
+
+            for col in row:
+                if col != " ":
+                    print(col, end=" ")
+                else:
+                    print(".", end=" ")
+
+            print()
     def joga_humano(self, jogador: int) -> None:
         """
         Pede ao jogador humano as coordenadas (linha, coluna) da jogada
@@ -57,3 +68,6 @@ class Gomoku(Jogo):
         :return: True se o jogo terminou (alguém ganhou), False caso contrário.
         """
         raise NotImplementedError("Implementar este método")
+
+game= Gomoku()
+print(game.mostra_tabuleiro())
