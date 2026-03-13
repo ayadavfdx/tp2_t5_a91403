@@ -6,6 +6,7 @@ Deve implementar todos os métodos abstratos herdados de Jogo.
 
 from jogo_abs import Jogo
 from colorama import Style,Fore,init
+from random import random
 
 class Gomoku(Jogo):
     """
@@ -90,8 +91,18 @@ class Gomoku(Jogo):
         """
         #Player symbol
         p_symbol=self.player_symbol(jogador)
-        
-        raise NotImplementedError("Implementar este método")
+
+        #Put random chip
+        options= ["X","O"]
+        occupied= []
+
+        #Choose empty cells
+        for a, row in enumerate(self.tabuleiro):
+            for b, column in enumerate(row):
+                if column in options:
+                    occupied.append(a,b)
+
+
 
     def ha_jogadas_possiveis(self) -> bool:
         """
