@@ -12,11 +12,11 @@ class Gomoku(Jogo):
     Classe concreta que herda da classe Jogo e implementa o jogo Gomoku.
     """
     #Method to validate player
-    def player_simbol(self,jogador: int)->str:
+    def player_symbol(self,jogador: int)->str:
         if jogador == 1:
-            jogador= f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}"
+            return f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}"
         elif jogador == 0:
-            jogador= f"{Fore.LIGHTYELLOW_EX}O{Style.RESET_ALL}"
+            return f"{Fore.LIGHTYELLOW_EX}O{Style.RESET_ALL}"
         else:
             return (f"{Fore.LIGHTRED_EX}Invalid player number (0-1)")
 
@@ -52,7 +52,7 @@ class Gomoku(Jogo):
         - Deve validar se a posição está dentro do tabuleiro e está livre.
         :param jogador: número do jogador (0 ou 1).
         """
-
+        #Player symbol
         while True:
             try:
                 ask_row=int(input("Choose a row (number (0-9)): "))  
@@ -107,5 +107,5 @@ class Gomoku(Jogo):
 game = Gomoku()
 game.inicializa_tabuleiro()
 game.mostra_tabuleiro()
-game.joga_humano(1)
+game.joga_humano(0)
 game.mostra_tabuleiro()
