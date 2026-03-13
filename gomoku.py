@@ -51,7 +51,19 @@ class Gomoku(Jogo):
         else:
             return None
 
+        while True:
+            try:
+                ask_row=int(input("Choose a row (number (0-9)): "))  
+                ask_colum=int(input("Choose a colum (number (0-9)): "))
 
+                row= ask_row
+                colum= ask_colum
+                self.tabuleiro[row][colum]=jogador
+                break
+            except ValueError:
+                print(f"MUST BE A NUMBER")
+
+                
     def joga_computador(self, jogador: int) -> None:
         """
         Realiza uma jogada aleatória do computador numa posição livre.
