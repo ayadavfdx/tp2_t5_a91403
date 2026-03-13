@@ -53,6 +53,7 @@ class Gomoku(Jogo):
         :param jogador: número do jogador (0 ou 1).
         """
         #Player symbol
+        p_symbol=self.player_symbol(jogador)
         while True:
             try:
                 ask_row=int(input("Choose a row (number (0-9)): "))  
@@ -75,7 +76,7 @@ class Gomoku(Jogo):
                     print("Occupied")
                     continue
                 else:
-                    self.tabuleiro[row][colum]=jogador
+                    self.tabuleiro[row][colum]=p_symbol
                 break
             except ValueError:
                 print(f"{Fore.LIGHTRED_EX}MUST BE A NUMBER{Style.RESET_ALL}")
