@@ -102,6 +102,15 @@ class Gomoku(Jogo):
                 if column in options:
                     occupied.append(a,b)
 
+        #Choose random play
+        while True:
+            row= random.randint(0,9)
+            col= random.randint(0,9)
+
+            if (row,col) not in occupied:
+                self.tabuleiro[row][col]= p_symbol
+                break
+            
 
 
     def ha_jogadas_possiveis(self) -> bool:
