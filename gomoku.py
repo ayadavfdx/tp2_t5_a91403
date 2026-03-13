@@ -58,6 +58,7 @@ class Gomoku(Jogo):
                 
                 row= ask_row
                 colum= ask_colum
+                options= ["X","O"]
 
                 #Validation for range
                 if 0>row or row>9:
@@ -65,6 +66,11 @@ class Gomoku(Jogo):
                     continue
                 elif 0>colum or colum >9:
                     print("Out of range!")
+                    continue
+
+                #Validation for cell occupied
+                elif self.tabuleiro[row][colum] in options:
+                    print("Occupied")
                     continue
                 else:
                     self.tabuleiro[row][colum]=jogador
