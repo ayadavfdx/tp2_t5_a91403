@@ -45,9 +45,9 @@ class Gomoku(Jogo):
         :param jogador: número do jogador (0 ou 1).
         """
         if jogador == 1:
-            jogador= f"X"
+            jogador= f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}"
         elif jogador == 0:
-            jogador= f"O"
+            jogador= f"{Fore.LIGHTYELLOW_EX}O{Style.RESET_ALL}"
         else:
             return None
 
@@ -76,7 +76,7 @@ class Gomoku(Jogo):
                     self.tabuleiro[row][colum]=jogador
                 break
             except ValueError:
-                print(f"MUST BE A NUMBER")
+                print(f"{Fore.LIGHTRED_EX}MUST BE A NUMBER{Style.RESET_ALL}")
 
 
     def joga_computador(self, jogador: int) -> None:
