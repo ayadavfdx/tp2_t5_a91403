@@ -6,7 +6,7 @@ Deve implementar todos os métodos abstratos herdados de Jogo.
 
 from jogo_abs import Jogo
 from colorama import Style,Fore,init
-from random import random
+import random
 
 class Gomoku(Jogo):
     """
@@ -112,13 +112,16 @@ class Gomoku(Jogo):
                 break
             
 
-
     def ha_jogadas_possiveis(self) -> bool:
         """
         Verifica se ainda há espaços vazios no tabuleiro.
         :return: True se ainda há jogadas possíveis, False caso contrário.
         """
-        raise NotImplementedError("Implementar este método")
+        for row in self.tabuleiro:
+            for colum in (row):
+                if colum == " ":
+                    return True
+        return False
 
     def terminou(self) -> bool:
         """
@@ -131,5 +134,5 @@ class Gomoku(Jogo):
 game = Gomoku()
 game.inicializa_tabuleiro()
 game.mostra_tabuleiro()
-game.joga_humano(0)
+game.joga_computador(1)
 game.mostra_tabuleiro()
