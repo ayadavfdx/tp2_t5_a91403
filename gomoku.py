@@ -133,7 +133,11 @@ class Gomoku(Jogo):
         for i in range (10):
             counter= 1
             for j in range(1,10):
-                if self.tabuleiro[i][j]!= " " and self.tabuleiro[i][j] == self.tabuleiro[i][j-1] :
+
+                current_piece_x= self.tabuleiro[i][j] 
+                last_piece_x= self.tabuleiro[i][j-1]
+
+                if current_piece_x != " " and current_piece_x == last_piece_x:
                     counter += 1
                 else:
                     counter = 1
