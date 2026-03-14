@@ -9,6 +9,7 @@ def start_game():
 
     current_player= 1
     while game.ha_jogadas_possiveis() and not game.terminou():
+        print("\n"*7)
         game.mostra_tabuleiro()
 
         if current_player ==1:
@@ -20,21 +21,23 @@ def start_game():
     
     game.mostra_tabuleiro()
     if game.terminou():
-        print("Winner")
+        print(f"{Fore.LIGHTGREEN_EX}Winner")
     else:
-        print("Draw")
+        print(f"{Fore.MAGENTA}Draw")
 
 def show_menu():
     while True:
-        print("\n---GOMOKU---")
-        print("1) Start Game")
-        print("2) Exit")
+        print(f"\n{Fore.LIGHTWHITE_EX}---GOMOKU---")
+        print(f"{Fore.LIGHTWHITE_EX}1) Start Game")
+        print(f"{Fore.LIGHTWHITE_EX}2) Exit")
 
-        option= input("Choose an option: ")
+        option= input(f"Choose an option: {Style.RESET_ALL}")
         if option== "1":
             start_game()
         elif option== "2":
-            print("Bye")
+            print(f"{Fore.LIGHTGREEN_EX}Bye")
+            break
         else:
-            print("Invalid option")
+            print(f"{Fore.RED}Invalid option")
 
+show_menu()
