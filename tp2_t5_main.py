@@ -11,6 +11,12 @@ def start_game():
     while game.ha_jogadas_possiveis() and not game.terminou():
         game.mostra_tabuleiro()
 
+        if current_player ==1:
+            game.joga_humano(current_player)
+        else:
+            game.joga_computador(current_player)
+
+        current_player = 1 - current_player
         
 def show_menu():
     while True:
