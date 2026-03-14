@@ -17,7 +17,13 @@ def start_game():
             game.joga_computador(current_player)
 
         current_player = 1 - current_player
-        
+    
+    game.mostra_tabuleiro()
+    if game.terminou():
+        print("Winner")
+    else:
+        print("Draw")
+
 def show_menu():
     while True:
         print("\n---GOMOKU---")
