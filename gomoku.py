@@ -148,7 +148,11 @@ class Gomoku(Jogo):
         #Vertical verification
         for j in range (10):
             for i in range (1,10):
-                if self.tabuleiro[i][j]!= " " and self.tabuleiro[i][j] == self.tabuleiro[i-1][j]:
+
+                current_piece_y= self.tabuleiro[i][j] 
+                last_piece_y= self.tabuleiro[i-1][j]
+
+                if current_piece_y != " " and current_piece_y == last_piece_y:
                     counter +=1
                 else:
                     counter = 1
