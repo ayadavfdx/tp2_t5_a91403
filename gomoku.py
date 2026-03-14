@@ -141,6 +141,17 @@ class Gomoku(Jogo):
                 if counter == 5:
                     return True
 
+        #Vertical verification
+        for j in range (10):
+            for i in range (1,10):
+                if self.tabuleiro[i][j]!= " " and self.tabuleiro[i][j] == self.tabuleiro[i-1][j]:
+                    counter +=1
+                else:
+                    counter = 1
+                
+                if counter == 5:
+                    return True
+
 game = Gomoku()
 game.inicializa_tabuleiro()
 game.mostra_tabuleiro()
