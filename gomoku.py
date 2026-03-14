@@ -129,7 +129,17 @@ class Gomoku(Jogo):
         horizontal, vertical, diagonal ↘️, diagonal ↗️).
         :return: True se o jogo terminou (alguém ganhou), False caso contrário.
         """
-        raise NotImplementedError("Implementar este método")
+        #Horizontal verification
+        for i in range (10):
+            counter= 1
+            for j in range(1,10):
+                if self.tabuleiro[i][j]!= " " and self.tabuleiro[i][j] == self.tabuleiro[i][j-1] :
+                    counter += 1
+                else:
+                    counter = 1
+
+                if counter == 5:
+                    return True
 
 game = Gomoku()
 game.inicializa_tabuleiro()
