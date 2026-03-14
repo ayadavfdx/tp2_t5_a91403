@@ -163,21 +163,23 @@ class Gomoku(Jogo):
         
         #Diagonal down verification
         for i in range (1,10):
+            counter=1
             for j in range (1,10):
 
                 current_p_diagonal_d= self.tabuleiro[i][j]
                 last_p_diagonal_d= self.tabuleiro[i-1][j-1]
 
-            if current_p_diagonal_d != " " and current_p_diagonal_d == last_p_diagonal_d:
-                counter += 1
-            else:
-                counter= 1
+                if current_p_diagonal_d != " " and current_p_diagonal_d == last_p_diagonal_d:
+                    counter += 1
+                else:
+                    counter= 1
             
-            if counter == 5:
-                return True
+                if counter == 5:
+                    return True
             
         #Diagoanl up verification
         for i in range(8,-1,-1):
+            counter=1
             for j in range(1,10):
 
                 current_p_diagonal_u= self.tabuleiro[i][j]
