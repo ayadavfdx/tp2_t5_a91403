@@ -147,6 +147,7 @@ class Gomoku(Jogo):
 
         #Vertical verification
         for j in range (10):
+            counter= 1
             for i in range (1,10):
 
                 current_piece_y= self.tabuleiro[i][j] 
@@ -159,6 +160,21 @@ class Gomoku(Jogo):
                 
                 if counter == 5:
                     return True
+        
+        #Diagonal down verification
+        for i in range (1,10):
+            for j in range (1,10):
+
+                current_p_diagonal_d= self.tabuleiro[i][j]
+                last_p_diagonal_d= self.tabuleiro[i-1][j-1]
+
+            if current_p_diagonal_d != " " and current_p_diagonal_d == last_p_diagonal_d:
+                counter += 1
+            else:
+                counter= 1
+            
+            if counter == 5:
+                return True
 
 game = Gomoku()
 game.inicializa_tabuleiro()
