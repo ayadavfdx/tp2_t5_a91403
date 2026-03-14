@@ -8,6 +8,8 @@ from jogo_abs import Jogo
 from colorama import Style,Fore,init
 import random
 
+init()
+
 class Gomoku(Jogo):
     """
     Classe concreta que herda da classe Jogo e implementa o jogo Gomoku.
@@ -62,7 +64,9 @@ class Gomoku(Jogo):
                 
                 row= ask_row
                 colum= ask_colum
-                options= ["X","O"]
+                options= [f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}",
+                        f"{Fore.LIGHTCYAN_EX}O{Style.RESET_ALL}"
+                        ]
 
                 #Validation for range
                 if 0>row or row>9:
