@@ -175,6 +175,21 @@ class Gomoku(Jogo):
             
             if counter == 5:
                 return True
+            
+        #Diagoanl up verification
+        for i in range(8,-1,-1):
+            for j in range(1,10):
+
+                current_p_diagonal_u= self.tabuleiro[i][j]
+                last_p_diagonal_u= self.tabuleiro[i+j][j-1]
+
+                if current_p_diagonal_u != " " and current_p_diagonal_u == last_p_diagonal_u:
+                    counter +=1
+                else:
+                    counter= 1
+                
+                if counter ==5:
+                    return True
 
 game = Gomoku()
 game.inicializa_tabuleiro()
