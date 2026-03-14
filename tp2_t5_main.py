@@ -4,8 +4,14 @@ from colorama import Style,init,Fore
 init()
 
 def start_game():
-    pass
+    game= Gomoku()
+    game.inicializa_tabuleiro()
 
+    current_player= 1
+    while game.ha_jogadas_possiveis() and not game.terminou():
+        game.mostra_tabuleiro()
+
+        
 def show_menu():
     while True:
         print("\n---GOMOKU---")
@@ -19,3 +25,4 @@ def show_menu():
             print("Bye")
         else:
             print("Invalid option")
+
