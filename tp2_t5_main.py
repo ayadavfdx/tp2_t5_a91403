@@ -57,9 +57,13 @@ def start_game():
     current_player= 1
 
     game(game,name,current_player)
-    
+
 def start_loaded_game():
-    pass
+    #Verificate if any session was saved
+    data= load_game()
+    if data == None:
+        print(f"{Fore.RED}No saved game found{Style.RESET_ALL}")
+
 
 def show_menu():
     while True:
