@@ -64,7 +64,8 @@ class Gomoku(Jogo):
                 
                 row= ask_row
                 colum= ask_colum
-                options= [f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}",
+                options= [
+                        f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}",
                         f"{Fore.LIGHTCYAN_EX}O{Style.RESET_ALL}"
                         ]
 
@@ -97,14 +98,17 @@ class Gomoku(Jogo):
         p_symbol=self.player_symbol(jogador)
 
         #Put random chip
-        options= ["X","O"]
+        options= [
+                f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}",
+                f"{Fore.LIGHTCYAN_EX}O{Style.RESET_ALL}"
+                        ]
         occupied= []
 
         #Choose empty cells
         for a, row in enumerate(self.tabuleiro):
             for b, column in enumerate(row):
                 if column in options:
-                    occupied.append(a,b)
+                    occupied.append((a,b))
 
         #Choose random play
         while True:
