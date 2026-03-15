@@ -50,6 +50,9 @@ def game(game,name,current_player):
     else:
         print(f"{Fore.MAGENTA}Draw")
 
+def start_game():
+    pass
+
 def start_loaded_game():
     pass
 
