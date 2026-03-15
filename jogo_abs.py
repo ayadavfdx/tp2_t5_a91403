@@ -18,7 +18,6 @@ class Jogo(ABC):
         Inicializar o jogo.
         """
         print("Bom jogo...")
-
         self.num_jogador_humano = None
         self.inicializa_tabuleiro()
 
