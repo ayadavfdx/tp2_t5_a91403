@@ -17,11 +17,11 @@ class Gomoku(Jogo):
     #Method to validate player
     def player_symbol(self,jogador: int)->str:
         if jogador == 1:
-            return f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}"
+            return "X"
         elif jogador == 0:
-            return f"{Fore.LIGHTYELLOW_EX}O{Style.RESET_ALL}"
+            return "O"
         else:
-            return (f"{Fore.LIGHTRED_EX}Invalid player number (0-1)")
+            return " "
 
     def inicializa_tabuleiro(self) -> None:
         """
