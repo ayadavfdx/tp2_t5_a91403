@@ -33,17 +33,17 @@ def start_game():
         game.mostra_tabuleiro()
 
         if current_player ==1:
+            
             #Add exit validation
             result=game.joga_humano(current_player)
             if result == "exit":
                 
                 name=input("Write your name: ")
                 board= game.tabuleiro
-                current_p= game.player_symbol(current_player)
 
-                save_game(name,board,current_p)
-                print("Your game was saved")
-                break
+                save_game(name,board,current_player)
+                print(f"{Fore.LIGHTBLUE_EX}Your game was saved")
+                return
 
         else:
             game.joga_computador(current_player)
