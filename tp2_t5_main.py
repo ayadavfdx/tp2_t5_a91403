@@ -4,15 +4,13 @@ import json
 
 init()
 
-def load_game(data):
+def load_game():
     try:
         with open("save_game.json","r")as f:
             return json.load(f)
     
     except FileNotFoundError:
-        with open("save_game.json","w") as f:
-            json.dump(data,f,indent=4)
-            return data
+            return None
 
 def save_game(name,board,current_player):
     data={
