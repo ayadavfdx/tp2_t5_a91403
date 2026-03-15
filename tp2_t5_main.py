@@ -51,8 +51,13 @@ def game(game,name,current_player):
         print(f"{Fore.MAGENTA}Draw")
 
 def start_game():
-    pass
+    game= Gomoku()
+    game.inicializa_tabuleiro()
+    name=input("Write your name: ")
+    current_player= 1
 
+    game(game,name,current_player)
+    
 def start_loaded_game():
     pass
 
