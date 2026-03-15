@@ -12,8 +12,9 @@ def load_game(data):
     except FileNotFoundError:
         with open("save_game.json","w") as f:
             json.dump(data,f,indent=4)
+            return data
 
-def save_game(board,name,current_player):
+def save_game(name,board,current_player):
     data={
         "name": name,
         "board": board, 
