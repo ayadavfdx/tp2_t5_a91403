@@ -53,6 +53,9 @@ def start_game():
     else:
         print(f"{Fore.MAGENTA}Draw")
 
+def start_loaded_game():
+    pass
+
 def show_menu():
     while True:
         print(f"\n{Fore.LIGHTWHITE_EX}---GOMOKU---")
