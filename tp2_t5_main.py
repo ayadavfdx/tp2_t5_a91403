@@ -65,12 +65,14 @@ def start_loaded_game():
         print(f"{Fore.RED}No saved game found{Style.RESET_ALL}")
         return
     
-    #Initialize game
+    #Load game
     game=Gomoku()
     game.tabuleiro= data["board"]
-    current_player= data["current_player"]
     name= data["name"]
-
+    current_player= data["current_player"]
+    
+    #Initialize game
+    game(game,name,current_player)
     
 def show_menu():
     while True:
