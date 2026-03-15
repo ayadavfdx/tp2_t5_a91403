@@ -21,7 +21,7 @@ def save_game(name,board,current_player):
         "current_player": current_player
     }
     with open("save_game.json","w")as f:
-        json.dump(data,f,indent=4)
+        json.dump(data,f,indent=4,)
 
 
 
@@ -35,11 +35,21 @@ def start_game():
         game.mostra_tabuleiro()
 
         if current_player ==1:
-            game.joga_humano(current_player)
+            #Add exit validation
+            result=game.joga_humano(current_player)
+            if result == "exit":
+                
+                name=input("Write your name: ")
+                board= game.tabuleiro
+                current_p= game.player_symbol(current_player)
+
+                save_game(name,board,current_p)
+                print("Your game was saved")
+                break
+
         else:
             game.joga_computador(current_player)
-
-        current_player = 1 - current_player
+        current_player = 1-current_player
     
     game.mostra_tabuleiro()
     if game.terminou():
@@ -62,3 +72,4 @@ def show_menu():
         else:
             print(f"{Fore.RED}Invalid option")
 
+show_menu()
