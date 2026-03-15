@@ -49,7 +49,6 @@ class Gomoku(Jogo):
                     print(".",end=" ")
             print()
 
-
     def joga_humano(self, jogador: int) -> None:
         """
         Pede ao jogador humano as coordenadas (linha, coluna) da jogada
