@@ -4,8 +4,14 @@ import json
 
 init()
 
-def load_game():
-    pass
+def load_game(data):
+    try:
+        with open("save_game.json","r")as f:
+            return json.load(f)
+    
+    except FileNotFoundError:
+        with open("save_game.json","w") as f:
+            json.dump(data,f,indent=4)
 
 def save_game():
     pass
@@ -48,4 +54,3 @@ def show_menu():
         else:
             print(f"{Fore.RED}Invalid option")
 
-show_menu()
