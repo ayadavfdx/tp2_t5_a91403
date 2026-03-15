@@ -39,23 +39,16 @@ class Gomoku(Jogo):
 
         for i,row in enumerate(self.tabuleiro):
             print(i,end=" ")
-
-            for col in row:
-                if col != " ":
-                    print(col, end=" ")
-                else:
-                    print(".", end=" ")
-
-            print()
-
-            #Use colorama for players
+            
             for col in row:
                 if col == "X":
-                    print(f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}")
+                    print(f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}",end=" ")
                 elif col == "O":
-                    print(f"{Fore.LIGHTYELLOW_EX}O{Style.RESET_ALL}")
+                    print(f"{Fore.LIGHTYELLOW_EX}O{Style.RESET_ALL}",end=" ")
                 else:
                     print(".",end=" ")
+            print()
+
 
     def joga_humano(self, jogador: int) -> None:
         """
