@@ -1,7 +1,15 @@
 from gomoku import Gomoku
 from colorama import Style,init,Fore
 import json
+
 init()
+
+def load_game():
+    pass
+
+def save_game():
+    pass
+
 
 def start_game():
     game= Gomoku()
