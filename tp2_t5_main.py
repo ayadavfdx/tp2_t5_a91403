@@ -21,11 +21,8 @@ def save_game(name,board,current_player):
     with open("save_game.json","w")as f:
         json.dump(data,f,indent=4,)
 
-def start_game():
-    game= Gomoku()
-    game.inicializa_tabuleiro()
+def game(game,name,current_player):
 
-    current_player= 1
     while game.ha_jogadas_possiveis() and not game.terminou():
         print("\n"*7)
         game.mostra_tabuleiro()
