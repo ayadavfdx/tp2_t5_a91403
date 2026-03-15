@@ -84,7 +84,7 @@ def show_menu():
         option= input(f"Choose an option: {Style.RESET_ALL}")
         if option== "1":
             start_game()
-        if option== "2":
+        elif option== "2":
             start_loaded_game()
         elif option== "3":
             print(f"{Fore.LIGHTGREEN_EX}Bye")
