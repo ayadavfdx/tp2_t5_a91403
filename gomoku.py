@@ -59,12 +59,16 @@ class Gomoku(Jogo):
         p_symbol=self.player_symbol(jogador)
         while True:
             try:
-                print("Type ´s´ to leave")
+                print("Type s to leave")
                 ask_row=input("Choose a row (number (0-9)/s): ").lower()  
-                ask_colum=input("Choose a colum (number (0-9)/s): ").lower()
 
                 #Validation for exit
-                if ask_row =="s" or ask_colum == "s":
+                if ask_row =="s":
+                    return "exit"
+                
+                ask_colum=input("Choose a colum (number (0-9)/s): ").lower()
+                #Validation for exit
+                if ask_colum =="s":
                     return "exit"
 
                 row= int(ask_row)
