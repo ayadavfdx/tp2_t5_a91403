@@ -47,6 +47,16 @@ class Gomoku(Jogo):
                     print(".", end=" ")
 
             print()
+
+            #Use colorama for players
+            for col in row:
+                if col == "X":
+                    print(f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}")
+                elif col == "O":
+                    print(f"{Fore.LIGHTYELLOW_EX}O{Style.RESET_ALL}")
+                else:
+                    print(".",end=" ")
+
     def joga_humano(self, jogador: int) -> None:
         """
         Pede ao jogador humano as coordenadas (linha, coluna) da jogada
