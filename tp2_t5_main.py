@@ -21,7 +21,7 @@ def save_game(name,board,current_player):
     with open("save_game.json","w")as f:
         json.dump(data,f,indent=4,)
 
-def game(game,name,current_player):
+def game_loop(game,name,current_player):
 
     while game.ha_jogadas_possiveis() and not game.terminou():
         print("\n"*7)
@@ -56,7 +56,7 @@ def start_game():
     name=input("Write your name: ")
     current_player= 1
 
-    game(game,name,current_player)
+    game_loop(game,name,current_player)
 
 def start_loaded_game():
     #Verificate if any session was saved
@@ -72,8 +72,8 @@ def start_loaded_game():
     current_player= data["current_player"]
     
     #Initialize game
-    game(game,name,current_player)
-    
+    game_loop(game,name,current_player)
+
 def show_menu():
     while True:
         print(f"\n{Fore.LIGHTWHITE_EX}---GOMOKU---")
@@ -85,8 +85,7 @@ def show_menu():
         if option== "1":
             start_game()
         if option== "2":
-            #add function
-            pass
+            start_loaded_game()
         elif option== "3":
             print(f"{Fore.LIGHTGREEN_EX}Bye")
             break
