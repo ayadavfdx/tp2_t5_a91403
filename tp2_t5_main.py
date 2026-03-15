@@ -21,8 +21,6 @@ def save_game(name,board,current_player):
     with open("save_game.json","w")as f:
         json.dump(data,f,indent=4,)
 
-
-
 def start_game():
     game= Gomoku()
     game.inicializa_tabuleiro()
@@ -59,12 +57,16 @@ def show_menu():
     while True:
         print(f"\n{Fore.LIGHTWHITE_EX}---GOMOKU---")
         print(f"{Fore.LIGHTWHITE_EX}1) Start Game")
-        print(f"{Fore.LIGHTWHITE_EX}2) Exit")
+        print(f"{Fore.LIGHTWHITE_EX}2) Load  Game")
+        print(f"{Fore.LIGHTWHITE_EX}3) Exit")
 
         option= input(f"Choose an option: {Style.RESET_ALL}")
         if option== "1":
             start_game()
-        elif option== "2":
+        if option== "2":
+            #add function
+            pass
+        elif option== "3":
             print(f"{Fore.LIGHTGREEN_EX}Bye")
             break
         else:
