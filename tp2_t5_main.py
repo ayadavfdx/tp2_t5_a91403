@@ -13,8 +13,15 @@ def load_game(data):
         with open("save_game.json","w") as f:
             json.dump(data,f,indent=4)
 
-def save_game():
-    pass
+def save_game(board,name,current_player):
+    data={
+        "name": name,
+        "board": board, 
+        "current_player": current_player
+    }
+    with open("save_game.json","w")as f:
+        json.dump(data,f,indent=4)
+
 
 
 def start_game():
