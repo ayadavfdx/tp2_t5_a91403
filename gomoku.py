@@ -59,16 +59,21 @@ class Gomoku(Jogo):
         p_symbol=self.player_symbol(jogador)
         while True:
             try:
-                ask_row=int(input("Choose a row (number (0-9)): "))  
-                ask_colum=int(input("Choose a colum (number (0-9)): "))
-                
-                row= ask_row
-                colum= ask_colum
+                print("Type ´s´ to leave")
+                ask_row=input("Choose a row (number (0-9)/s): ").lower()  
+                ask_colum=input("Choose a colum (number (0-9)/s): ").lower()
+
+                #Validation for exit
+                if ask_row =="s" or ask_colum == "s":
+                    return "exit"
+
+                row= int(ask_row)
+                colum= int(ask_colum)
                 options= [
                         f"{Fore.LIGHTCYAN_EX}X{Style.RESET_ALL}",
                         f"{Fore.LIGHTCYAN_EX}O{Style.RESET_ALL}"
                         ]
-
+                
                 #Validation for range
                 if 0>row or row>9:
                     print("Out of range!")
